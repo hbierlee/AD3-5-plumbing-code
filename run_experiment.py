@@ -30,7 +30,7 @@ instances = [
   (11, 22, 10),
   (9, 36, 12),
   (16, 16, 6),
-  # (15, 21, 7), # Lambda = 2, best known solution = 3
+  (15, 21, 7), # Lambda = 2, best known solution = 3
   (12, 44, 11),
   (10, 30, 9)
 ]
