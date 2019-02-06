@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 import sys
-if sys.version_info[0] != 3 or sys.version_info[1] < 4:
-    print("This script requires Python version >=3.4")
+if sys.version_info[0] != 3 or sys.version_info[1] < 5:
+    print("This script requires Python version >=3.5")
     sys.exit(1)
 
 import csv
@@ -64,7 +65,9 @@ def main():
     help='Which instances to run (default: all)')
 
   args = parser.parse_args()
-  
+
+  print(args.parameters)
+
   # Run experiments
   results = []
   for instance in [instances[i] for i in args.instances]:
@@ -80,7 +83,7 @@ def main():
           str(b),
           str(r),
           '--print-stats',  # replace for your -p flag
-          args.parameters,
+          *args.parameters.split(' '),
         ],
         check=True,
         stdout=subprocess.PIPE,
